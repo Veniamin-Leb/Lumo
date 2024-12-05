@@ -187,7 +187,7 @@ section {
   color: rgba(13, 22, 46, 0.6156862745);
 }
 .modal .modal-content .content__blocks .blocks__block ul .unactive::before {
-  background-image: url("/Assets/img/star-unact.svg");
+  background-image: url("../img/star-unact.svg");
 }
 .modal .modal-content .content__blocks .blocks__block p {
   width: 100%;
@@ -388,7 +388,7 @@ section {
 .modal .modal-content .quiz__date .date__day input[type=date]::-webkit-calendar-picker-indicator {
   color: transparent; /* Убираем цвет стандартной стрелки */
   cursor: pointer;
-  background: url("/Assets/img/Calend.svg");
+  background: url("../img/Calend.svg");
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
