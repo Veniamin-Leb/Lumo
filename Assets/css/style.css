@@ -179,7 +179,7 @@ section {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background-image: url("/Assets/img/star.svg");
+  background-image: url(".../img/star.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -689,7 +689,7 @@ header .container .header__button button:hover {
 .main {
   height: 670px;
   padding: 100px 0;
-  background-image: url('/Assets/img/main.png');
+  background-image: url('/.../img/main.png');
   background-size: 95%;
   background-position: 0 80px;
   background-repeat: no-repeat;
