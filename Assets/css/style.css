@@ -689,7 +689,7 @@ header .container .header__button button:hover {
 .main {
   height: 670px;
   padding: 100px 0;
-  background-image: url("Assets/img/main.png");
+  background-image: url('/Assets/img/main.png');
   background-size: 95%;
   background-position: 0 80px;
   background-repeat: no-repeat;
