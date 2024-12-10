@@ -1240,9 +1240,16 @@
     max-width: 100%;
   }
   header .container .header__burger .burger__button button {
-    width: 43%;
+    width: 60%;
     margin: 15px auto;
     padding: 10px 20px;
+  }
+  header .container .header__burger .burger__button button svg {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  header .container .header__burger .burger__button button p {
+    margin-right: auto;
   }
   .main {
     height: 450px;

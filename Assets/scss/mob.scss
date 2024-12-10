@@ -1404,9 +1404,16 @@
                 .burger__button{
                     max-width: 100%;
                     button{
-                        width: 43%;
+                        width: 60%;
                         margin: 15px auto;
                         padding: 10px 20px;
+                        svg{
+                            margin-left: auto;
+                            margin-right: 10px;
+                        }
+                        p{
+                            margin-right: auto;
+                        }
                     }
                 }
             }
