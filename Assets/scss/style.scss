@@ -173,7 +173,7 @@ section{
                         transform: translateY(-50%);
                         width: 20px; 
                         height: 20px;
-                        background-image: url('/Assets/img/star.svg');
+                        background-image: url("../img/star.svg");
                         background-size: cover; 
                         background-repeat: no-repeat;
                     }
@@ -181,7 +181,7 @@ section{
                         color: #0d162e9d;
                     }
                     .unactive::before{
-                        background-image: url('/Assets/img/star-unact.svg');
+                        background-image: url("../img/star-unact.svg");
                     }
 
                 }
@@ -401,7 +401,7 @@ section{
                 input[type="date"]::-webkit-calendar-picker-indicator {
                     color: transparent; /* Убираем цвет стандартной стрелки */
                     cursor: pointer;
-                    background: url('/Assets/img/Calend.svg');
+                    background: url("../img/Calend.svg");
                     background-size: 90%;
                     background-position: center;
                     background-repeat: no-repeat;
@@ -441,6 +441,9 @@ section{
                         padding: 10px 0;
                     }
                 }
+            }
+            .date__time::-webkit-scrollbar{
+                display: none;
             }
         }
         .quiz__contacts{
@@ -704,12 +707,149 @@ header{
                 opacity: .8;
             }
         }
+        .header__menu{
+            display: none;
+            margin-top: 10px;
+            button{
+                background: none;
+                width: 10%;
+                margin: 0 auto;
+                padding: 0;
+                hr{
+                    width: 20px;
+                    height: 2px;
+                    border-radius: 20%;
+                    background: #8098A9;
+                    margin: 0;
+                    margin: 3px auto;
+                    transition: all 0.3s ease-in-out;
+                    border: none;
+                }
+                .hidden{
+                    opacity: 0;
+                }
+                .rotate-top{
+                    transform: rotate(45deg) translate(3px, 3px);
+                }
+                .rotate-bottom{
+                    transform: rotate(-45deg) translate(4px, -4px);
+                }
+            }
+        }
+        .header__burger{
+            display: none;
+            background: #fff;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top:100%;
+            z-index: 2;
+            flex-direction: column;
+            box-shadow: 0 10px 10px 10px #fff;
+            animation: slideDown .3s ease-out forwards;
+            .burger__addres{
+                display: flex;
+                width: 100%;
+                max-width: 307px;
+                p{
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin: auto 0;
+                }
+            }
+            .burger__social{
+                display: flex;
+                width: 100%;
+                max-width: 135px;
+                justify-content: space-between;
+                a{  
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+
+                    border: 1px solid #C0E1ED;
+                    border-radius: 12px;
+                    margin: auto 0;
+
+                    transition: all linear .6s;
+
+                    svg{
+                        margin: auto;
+                        fill: #4C8FD1;
+                        transition: all linear .5s;
+                    }
+                }
+                a:hover{
+                    cursor: pointer;
+                    background-color: #4C8FD1;
+                    svg{
+                        fill: #fff;
+                    }
+                }
+            }
+            .burger__number{
+                display: flex;
+                a{
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: #0D162E;
+                    text-decoration: none;
+                    margin: auto 0;
+                }
+            }
+            .burger__button{
+                display: flex;
+                width: 100%;
+                max-width: 183px;
+                button{
+                    display: flex;
+                    background-color: #4C8FD1;
+                    
+                    justify-content: space-between;
+                    padding: 5px 20px;
+                    border-radius: 15px 15px 15px 30px;
+                    p{
+                        font-family: "Geologica";
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #fff;
+                        text-transform: none;
+                        margin: auto 0;
+                    }
+                    svg{
+                        margin: auto 0;
+                    }
+                    
+                }
+                button:hover{
+                    opacity: .8;
+                }
+            }
+        }
+        .active{
+            display: flex;
+        }
+        @keyframes slideDown {
+            0% {
+                top: 0;
+                opacity: 0.5;
+                transform: scaleY(.5) translateY(0);
+            }
+            50% {
+                top: 150%;
+                transform: scaleY(1.3) translateY(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleY(1) translateY(0);
+            }
+        }
     }
 }
 .main{
     height: 670px;
     padding: 100px 0;
-    background-image: url('/Assets/img/main.png');
+    background-image: url("../img/main.png");
     background-size: 95%;
     background-position: 0 80px;
     background-repeat: no-repeat;
@@ -942,6 +1082,7 @@ header{
     padding: 60px 0;
     background-color: #fff;
     position: relative;
+    overflow: hidden;
     .img-bckg{
         width: 70%;
 
@@ -965,6 +1106,7 @@ header{
             display: flex;
             justify-content: space-between;
             .content__left{
+                width: 48%;
                 ul{
                     width: 100%;
                     li{
@@ -975,11 +1117,12 @@ header{
                 }
             }
             .content__right{
+                width: 48%;
                 span{
                     display: block;
                     background: #4C8FD1;
                     border-radius: 50px;
-                    width: 470px;
+                    width: 100%;
                     height: 288px;
                 }
             }
@@ -1033,7 +1176,7 @@ header{
     img{
         width: 100%;
         position: absolute;
-        bottom: -150px;
+        bottom: -100px;
         z-index: 0;
     }
 }
@@ -1165,6 +1308,10 @@ footer{
                     color: #4C8FD1;
                     font-size: 16px;
                 }
+                span{
+                    font-family: "Geologica";
+                    color: #4C8FD1;
+                }
             }
             .docs__bot{
                 width: 100%;
@@ -1175,7 +1322,7 @@ footer{
                     color: #9AB8D6;
                 }
                 a:last-child{
-                    margin-left: 100px;
+                    margin-left: auto;
                 }
             }
         }

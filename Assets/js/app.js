@@ -9,7 +9,24 @@
             arrows: true,
             prevArrow: '<button class="slick-prev"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 3L5 16.7213L23 34" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg> </button>',
             nextArrow: '<button class="slick-next"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 34L21 20.2787L3 3" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg></button>',
-          });
+            responsive: [
+                {
+                  breakpoint: 1025,
+                  settings: {
+                    slidesToShow: 2, // Показывать 2 слайда
+                    slidesToScroll: 1, // Переключать 1 слайд за раз
+                  }
+                },
+                {
+                    breakpoint: 770,
+                    settings: {
+                      slidesToShow: 1, // Показывать 2 слайда
+                      slidesToScroll: 1,
+                      arrows: false, // Переключать 1 слайд за раз
+                    }
+                  }
+              ]
+        });
     }
     function initSlider2() {
         $('.slider__content').slick({
@@ -21,6 +38,29 @@
             nextArrow: '<button class="slick-next"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 34L21 20.2787L3 3" stroke="#E1DEFC" stroke-width="6" stroke-linecap="round"/></svg></button>',
           });
     }
+///////////////////////////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.querySelector(".header__menu button");
+    const burgerMenu = document.querySelector(".header__burger");
+    const hrElements = menuButton.querySelectorAll("hr");
+  
+    menuButton.addEventListener("click", () => {
+      // Переключаем видимость меню
+      burgerMenu.classList.toggle("active");
+  
+      // Превращаем полоски в крестик
+      hrElements.forEach((hr, index) => {
+        if (index === 0) {
+          hr.classList.toggle("rotate-top");
+        } else if (index === 1) {
+          hr.classList.toggle("hidden");
+        } else if (index === 2) {
+          hr.classList.toggle("rotate-bottom");
+        }
+      });
+    });
+  });
+///////////////////////////////////////////////////////////////////////////////
     // Получаем элементы
       const modal = document.getElementById("modal"); // Само модальное окно
       const modal_ph = document.getElementById("modal_ph"); 
