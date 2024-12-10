@@ -983,7 +983,6 @@ header{
             display: flex;
             justify-content: space-between;
             span{
-                
                 height: 265px;
                 display: flex;
                 background-color: #4C8FD1;
@@ -1161,6 +1160,26 @@ header{
                 border: 10px solid #fff;
                 border-radius: 50px;
                 filter: drop-shadow(10px 10px 10px #f8a7bb9f);
+
+            }
+        }
+        .fidback__slider{
+            display: none;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 0 30px;
+            
+
+            span{
+                
+                height: 300px;
+                
+
+                background-color: #0D162E;
+                border: 10px solid #fff;
+                border-radius: 50px;
+                margin: 0 auto;
 
             }
         }

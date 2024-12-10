@@ -7,6 +7,8 @@
             slidesToShow: 3,
             slidesToScroll: 3,
             arrows: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             prevArrow: '<button class="slick-prev"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 3L5 16.7213L23 34" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg> </button>',
             nextArrow: '<button class="slick-next"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 34L21 20.2787L3 3" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg></button>',
             responsive: [
@@ -34,9 +36,29 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             prevArrow: '<button class="slick-prev"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 34L5 20.2787L23 3" stroke="#E1DEFC" stroke-width="6" stroke-linecap="round"/></svg></button>',
             nextArrow: '<button class="slick-next"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 34L21 20.2787L3 3" stroke="#E1DEFC" stroke-width="6" stroke-linecap="round"/></svg></button>',
-          });
+            responsive: [
+                {
+                    breakpoint: 500,
+                    settings: {
+                      arrows: false, 
+                    }
+                  }
+              ]
+        });
+    }
+    function initSlider3() {
+        $('.fidback__slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
     }
 ///////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
@@ -99,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. Инициализация основного скрипта
     document.addEventListener("DOMContentLoaded", () => {
         initSlider();
-        initSlider2(); // Инициализация слайдера
+        initSlider2();
+        initSlider3(); // Инициализация слайдера
     });
 //////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {

@@ -1115,6 +1115,20 @@ header .container .active {
   border-radius: 50px;
   filter: drop-shadow(10px 10px 10px rgba(248, 167, 187, 0.6235294118));
 }
+.fedback .container .fidback__slider {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 30px;
+}
+.fedback .container .fidback__slider span {
+  height: 300px;
+  background-color: #0D162E;
+  border: 10px solid #fff;
+  border-radius: 50px;
+  margin: 0 auto;
+}
 .fedback .container button {
   width: 100%;
   max-width: 425px;

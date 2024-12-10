@@ -1089,7 +1089,7 @@
         font-size: 20px!important;
     }
     button{
-        font-size: 15px;
+        font-size: 12px;
     }
     .container{
         max-width: 90%;
@@ -1422,11 +1422,13 @@
     }
     .main{
         height: 450px;
-        padding: 50px 0;
+        padding: 0;
+        padding-top: 30px;
+        background-position: 0 120px;
         .container{
             .main__content{
                 h1{
-                    font-size: 30px;
+                    font-size: 25px;
                 }
                 ul{
                     li{
@@ -1436,7 +1438,7 @@
                 button{
                     max-width: 250px;
                     font-size: 15px;
-                    padding: 15px 0;
+                    padding: 10px 0;
                     margin: 20px 0;
                     border-radius: 15px 15px 50px 15px;
                 }
@@ -1448,8 +1450,15 @@
                         margin: 5px auto;
                         height: 45px;
                         p{
-                            margin-left: 12px;
-                            font-size: 11px;
+                            margin-left: 20px;
+                            font-size: 10px;
+                            margin-right: auto;
+                        }
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            margin: auto 0;
+                            margin-left: 20px;
                         }
                     }
                 }
@@ -1457,31 +1466,38 @@
         }
     }
     .program{
-        padding: 25px 0; 
+        padding: 15px 0;
+        overflow-x: clip;
+        
         .program__bcg{
-            top: -40px;
+            width: 150%;
+            left: -15%;
+            top: -35px;
             height: 400px;
         }
         .container{
             h2{
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
             .program__content{
+                display: flex;
+                flex-direction: column;
                 .content__left{
-                    width: 47%;
+                    width: 100%;
+                    margin-bottom: 10px;
                     .video{
                         height: 150px;
                     }
                 }
                 .content__right{
-                    width: 47%;
+                    width: 100%;
                     margin: auto 0;
                     h3{
                         font-size: 20px;
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                     }
                     p{
-                        font-size: 15px;
+                        font-size: 13px;
                     }
                 }
             }
@@ -1490,37 +1506,52 @@
     .animator{
         .container{
             h2{
-                margin: 30px 0;
-                margin-top: 70px;
+                margin: 10px 0;
+                margin-top: 80px;
+            }
+            .animator__slider{
+                width: 80%;
+                margin: 0 auto;
+                span{
+                    height: 200px;
+                }
             }
             button{
-                max-width: 370px;
-                margin: 30px auto;
+                max-width: 280px;
+                margin: 10px auto;
+                margin-bottom: 30px;
+                padding: 0;
+                padding: 15px 0;
             }
         }
     }
     .activ{
         .img-bckg{
-            width: 300px;
+            width: 100px;
     
             position: absolute;
-            top:-10%;
-            right: 15%;
+            top:-5%;
+            right: 8%;
     
             transform: rotate(12deg);
         }
         .container{
             .activ__slider{
                 h2{
+                    margin-top: 30px;
                     margin-bottom: 30px;
                 }
                 img{
-                    width: 215px;
+                    width: 40%;
                 }
                 .slider__content{
+                    width: 100%;
+                    margin: 0 auto;
                     margin-bottom: 80px;
                     .content{
                         flex-wrap: wrap;
+                        width: 100%;
+                        padding: 0 20px;
                         .content__left{
                             width: 100%;
                             span{
@@ -1529,13 +1560,14 @@
                             }
                         }
                         .content__right{
-                            width: 100%;
+                            width: 90%;
+                            margin: 0 auto;
                             h3{
-                                font-size: 30px;
+                                font-size: 20px;
                                 margin: 10px 0;
                             }
                             p{
-                                font-size: 20px;
+                                font-size: 15px;
                             }
                         }
                         
@@ -1559,6 +1591,7 @@
             .raz__content{
                 .content__left{
                     margin: auto;
+                    width: 45%;
                     ul{
                         li{
                             font-size: 13px;
@@ -1567,9 +1600,10 @@
                 }
                 .content__right{
                     margin: auto;
+                    width: 30%;
                     span{
                         width: 100%;
-                        height: 200px;
+                        height: 100px;
                     }
                 }
             }
@@ -1577,73 +1611,55 @@
     }
     .fedback{
         .img-bckg{
-            width: 300px;
+            width: 200px;
     
             position: absolute;
-            top:50px;
-            left: 0;
+            top:10px;
+            left: -50px;
             z-index: 1;
         }
         .container{
             h2{
-                font-size: 30px!important;
+                font-size: 20px!important;
             }
             h2:first-child{
-                margin-bottom: 30px;
-                font-size: 45px!important;
+                margin-bottom: 10px;
+                font-size: 30px!important;
             }
             .fidback__video{
-                flex-wrap: wrap;
-                margin-bottom: 50px;
-    
-                span{
-                    width: 40%;
-                    max-width: 40%;
-                    height: 200px;
-                    margin: 5px auto;
-                }
+                display: none;
+            }
+            .fidback__slider{
+                display: flex;
             }
             button{
-                max-width: 380px;
+                max-width: 220px;
+                padding: 15px 0;
             }
         }
         img{
-            bottom: -40px;
+            bottom: -30px;
         }
     }
     .contacts{
-        margin-top: 80px;
-        padding-bottom: 80px;
+        margin-top: 60px;
+        padding-bottom: 30px;
         .container{
             h2{
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
             .contacts__content{
-                flex-direction: column;
                 .content__left{
-                    width: 100%;
-                    flex-wrap: wrap;
-                    margin-bottom: 20px;
                    .left__string{
-                    width: 100%;
-                    margin: 5px 0; 
-                    svg{
-                        margin: 0;
-                    }
+                        p{
+                            font-size: 15px;
+                        }
                    }
                    hr{
-                    max-width: 450px;
-                    margin: 15px 0;
+                        max-width: 300px;
                     }
                     b{
                         margin-bottom: 10px;
-                    }
-                }
-                .content__right{
-                    width: 100%;               
-                    span{
-                        width: 100%;
-                        height: 100%;
                     }
                 }
             }
@@ -1651,39 +1667,17 @@
         }
     }
     footer{
-        padding: 20px 0;
         .container{
             .footer__docs{
-                width: 50%;
-                max-width: 100%;
-                
                 .docs__top{
-                    flex-direction: column;
                     p{
-                        font-size: 15px;
-                        margin-bottom: 10px;
-                    }
-                    span{
-                        display: none;
+                        font-size: 12px;
                     }
                 }
                 .docs__bot{
-                    flex-direction: column;
                     a{
-                        font-size: 13px;
-                        margin: 5px 0;
+                        font-size: 10px;
                     }
-                    a:last-child{
-                        margin: 0;
-                    }
-                }
-            }
-            .footer__logo{
-                max-width: 300px;
-                width: 150px;
-                margin: auto;
-                img{
-                    width: 100%;
                 }
             }
         }
