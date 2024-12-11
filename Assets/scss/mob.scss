@@ -1096,63 +1096,29 @@
     }
     .modal {
         .modal-content {
-            width: 100%;
-            max-width: 100%;
-            height: 100%;
-            box-shadow: none;
-            position: relative;
             h2{
-                font-size: 54px!important;
-                margin: 35px 0;
+                font-size: 40px!important;
+                margin: 0;
+                margin-top: 50px;
+                margin-bottom: 30px;
             }
             .content__blocks{
-                width: 100%;
-                max-width: 80%;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
+                height: 75vh;
+                overflow-y: scroll;
                 .blocks__block{
-                    width: 45%;
-                    margin: 5px auto;
-                    ul{
-                        width: 100%;
-                        margin: 0;
-                        margin-bottom: 24px;
-                        list-style: none;
-                        li{
-                            font-size: 15px;
-                            margin-bottom: 16px;
-                        }
-                        li::before{
-                            left: -30px;
-                            top: 50%;
-                            width: 20px; 
-                            height: 20px;
-                        }
-    
-                    }
-                    p{
-                        font-size: 36px;
-                        margin-bottom: 25px;
-                    }
-                    button{
-                        max-width: 185px;
-                        height: 55px;
-                        margin: 0 auto;
-                    }
+                    width: 100%;
+                    margin: 10px auto;
                 }
             }
+            .content__blocks::-webkit-scrollbar{
+                display: none;
+            }
             .quiz__animat{
-                width: 100%;
-                max-width: 80%;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                margin: 0 auto;
+                height: 72vh;
+                overflow-y: scroll;
                 .animat__block{
-                    width: 49%;
-                    border-radius: 15px;
-                    margin-bottom: 1%;
+                    width: 90%;
+                    margin: 2% auto;
                     span{
                         width: 100%;
                         height: 250px;
@@ -1163,11 +1129,11 @@
                     }
                 }
             }
+            .quiz__animat::-webkit-scrollbar{
+                display: none;
+            }
             .quiz__show{
-                max-width: 80%;
-                height: 70vh;
-                flex-wrap: wrap;
-                overflow: auto;
+                height: 67vh;
                 .show__block{
                     width: 100%;
                     margin-bottom: 3%;
@@ -1186,104 +1152,49 @@
                 display: none;
             }
             .quiz__buttons{
-                width: 100%;
-                max-width: 80%;
-                position: absolute;
-                z-index: 1001;
-                bottom: 1%;
-                left: 10%;
-                box-shadow: 0px 0px 20px 40px #4C8FD1;
-                background: #4C8FD1;
                 .progress-bar{
-                    width: 58%; 
-                }
-                .btn-prev{
-                    width: 40px;
-                    height: 40px!important;
-                    border-radius: 50%;
-                    margin: auto;
-                    svg{
-                        width: 50%;
-                        margin:auto;
-                        margin-top: 2px;
-                    }
+                    width: 45%; 
                 }
                 .btn-next{
-                    max-width: 170px;
-                    padding: 0;
-                    padding: 13px 0;
+                    max-width: 100px;
                 }
             }
             .quiz__guests{
                 width: 100%;
-                max-width: 80%;
+                max-width: 90%;
                 height: 70%;
-                
                 .guests__block{
                     width: 100%;
-                    height: 290px;
+                    height: auto;
                     margin: 0;
                     margin: auto;
+                    padding: 10px 0;
                     .block{
-                        width: 400px;
-                        margin: 0 auto;
-                        display: flex;
-                        justify-content: space-between;
-                        flex-wrap: nowrap;
-                        margin-top: 50px;
+                        width: 90%;
+                        margin: 10px auto;
+                        flex-wrap: wrap;
+                        justify-content: center;
+
                         p{
-                            width: 200px;
+                            width: 100%;
                             font-size: 26px;
-                            font-weight: 600;
                             text-align: left;
-                            color: #0D162E;
-                            
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 10px 0;
                         }
                         span{
-                            font-size: 16px;
-                            font-weight: 300;
-                            line-height: 130%;
-                            opacity: 40%;
-                        }
-                        b{
-                            font-family: 'Geologica';
-                            font-size: 36px;
-                            font-weight: 600;
-                            color: #E15E40;
                             margin: auto 0;
                         }
-                        button{
-                            width: 62px;
-                            height: 62px;
-                            border-radius: 50px;
-                            background: none;
-                            
-                            
-                            box-shadow: 0px 4px 4px #0000002d;
-    
-                            font-family: 'Geologica';
+                        b{
                             font-size: 36px;
-                            font-weight: 600;
-                            line-height: 0;
-                            color: #E15E40;
-                            transition: all linear .1s;
+                            margin: auto 20px;
                         }
-                        button:hover{
-                            box-shadow: 0px 6px 4px #0000002d;
-                        }
-                        button:active{
-                            box-shadow: 0px 2px 4px #0000002d;
-                        }
-                        .back{
-                            color: #C8C1C1;
-                        }
-                        
-    
                     }
                 }
             }
             .quiz__date{
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
                 .date__day{
                     margin-bottom: 20px;
@@ -1293,17 +1204,13 @@
                     }
                 }
                 .date__time{
-                    width: 100%;
-                    height: 70vh;
-                    margin: 0 auto;
-                    padding: 0;
+                    height: 65vh;
                     .time{
                         width: 80%;
                         margin: 0 auto;
                         padding: 20px 0;
                         span{
-                            width: 70%;
-                            font-size: 26px;
+                            font-size: 19px;
                         }
                         button{
                             font-size: 15px;
@@ -1683,6 +1590,532 @@
         }
     }
 }
+@media (max-width: 365px) {
+    h2{
+        font-size: 17px!important;
+    }
+    button{
+        font-size: 10px;
+    }
+    .container{
+        max-width: 90%;
+    }
+    .modal {
+        .modal-content {
+            h2{
+                font-size: 30px!important;
+                margin: 0;
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+            .close{
+                top:20px;
+                right: 20px;
+            }
+            .content__blocks{
+                height: 75vh;
+                overflow-y: scroll;
+                .blocks__block{
+                    width: 100%;
+                    margin: 10px auto;
+                }
+            }
+            .content__blocks::-webkit-scrollbar{
+                display: none;
+            }
+            .quiz__animat{
+                height: 72vh;
+                overflow-y: scroll;
+                .animat__block{
+                    width: 90%;
+                    margin: 2% auto;
+                    span{
+                        width: 100%;
+                        height: 250px;
+                    }
+                    p{
+                        font-size: 20px;
+                        padding: 18px 0;
+                    }
+                }
+            }
+            .quiz__animat::-webkit-scrollbar{
+                display: none;
+            }
+            .quiz__show{
+                height: 67vh;
+                .show__block{
+                    width: 100%;
+                    margin-bottom: 3%;
+                    
+                    span{
+                        width: 100%;
+                        height: 250px;
+                    }
+                    p{
+                        font-size: 20px;
+                        padding: 18px 0;
+                    }
+                }
+            }
+            .quiz__show::-webkit-scrollbar{
+                display: none;
+            }
+            .quiz__buttons{
+                .progress-bar{
+                    width: 38%; 
+                }
+                .btn-next{
+                    max-width: 100px;
+                }
+            }
+            .quiz__guests{
+                width: 100%;
+                max-width: 90%;
+                height: 70%;
+                .guests__block{
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    margin: auto;
+                    padding: 10px 0;
+                    .block{
+                        width: 90%;
+                        margin: 10px auto;
+                        flex-wrap: wrap;
+                        justify-content: center;
 
+                        p{
+                            width: 100%;
+                            font-size: 26px;
+                            text-align: left;
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 10px 0;
+                        }
+                        span{
+                            margin: auto 0;
+                        }
+                        b{
+                            font-size: 36px;
+                            margin: auto 20px;
+                        }
+                    }
+                }
+            }
+            .quiz__date{
+                width: 90%;
+                margin: 0 auto;
+                .date__day{
+                    margin-bottom: 20px;
+                    input{
+                        width: 200px;
+                        font-size: 26px;
+                    }
+                }
+                .date__time{
+                    height: 65vh;
+                    .time{
+                        width: 80%;
+                        margin: 0 auto;
+                        padding: 20px 0;
+                        span{
+                            font-size: 19px;
+                        }
+                        button{
+                            font-size: 15px;
+                        }
+                    }
+                }
+                
+            }
+            .quiz__contacts{
+                width: 60%;
+                height: 70%;
+                margin-top: 20%;
+                label{
+                    width: 100%;
+                    font-size: 15px;
+                    margin: 10px 0;
+                }
+                input{
+                    width: 100%;
+                    height: 35px;
+
+                    padding-left: 10px;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+                textarea{
+                    width: 100%;
+                    height: 150px;
+    
+                    font-size: 15px;
+                }
+            }
+            .quiz-step.active {
+                display: block;
+                height: 100vh;
+              }
+        }  
+    }
+    .modal_ph{
+        .modal-content {
+            button{
+                width: 25%;
+            }   
+        }
+    }
+
+    header{
+        padding: 20px 0;
+        
+        .container{
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+            .header__logo{
+                max-width: 100%;
+                margin: 5px 0;
+                img{
+                    width: 20%;
+                    margin: 0 auto;
+                }
+            }
+            .header__addres{
+                display: none;
+            }
+            .header__social{
+                display: none;
+            }
+            .header__number{
+                display: none;
+            }
+            .header__button{
+                display: none;
+            }
+            .header__menu{
+                display: flex;
+            }
+            .header__burger{
+                margin-top: 10px;
+                .burger__addres{
+                    max-width: 100%;
+                    p{
+                        font-size: 13px;
+                        margin: 10px auto;
+                    }
+                }
+                .burger__social{
+                    width: 100%;
+                    max-width: 135px;
+                    margin: 5px auto;
+                    order: 99;
+                    a{  
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .burger__number{
+                    width: 100%;
+                    a{
+                        font-size: 24px;
+                        margin: 5px auto;
+                        font-weight: 600;
+                    }
+                }
+                .burger__button{
+                    max-width: 100%;
+                    button{
+                        width: 60%;
+                        margin: 15px auto;
+                        padding: 10px 20px;
+                        svg{
+                            margin-left: auto;
+                            margin-right: 10px;
+                        }
+                        p{
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    .main{
+        height: 500px;
+
+        background-position: 0 60px;
+        .container{
+            .main__content{
+                h1{
+                    font-size: 25px;
+                }
+                ul{
+                    li{
+                        font-size: 15px;
+                    }
+                }
+                button{
+                    max-width: 250px;
+                    font-size: 15px;
+                    padding: 10px 0;
+                    margin: 20px 0;
+                    border-radius: 15px 15px 50px 15px;
+                }
+                .content__decoration{
+                    flex-wrap: wrap;
+                    .decoration-block{
+                        width: 48%;
+                        max-width: 48%;
+                        margin: 5px auto;
+                        height: 45px;
+                        p{
+                            font-size: 8px;
+                            margin-left: 10px
+                        }
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            margin: auto 0;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .program{
+        padding: 15px 0;
+        overflow-x: clip;
+        
+        .program__bcg{
+            width: 150%;
+            left: -15%;
+            top: -35px;
+            height: 400px;
+        }
+        .container{
+            h2{
+                margin-bottom: 10px;
+            }
+            .program__content{
+                display: flex;
+                flex-direction: column;
+                .content__left{
+                    width: 100%;
+                    margin-bottom: 10px;
+                    .video{
+                        height: 150px;
+                    }
+                }
+                .content__right{
+                    width: 100%;
+                    margin: auto 0;
+                    h3{
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+    .animator{
+        .container{
+            h2{
+                margin: 10px 0;
+                margin-top: 80px;
+            }
+            .animator__slider{
+                width: 80%;
+                margin: 0 auto;
+                span{
+                    height: 200px;
+                }
+            }
+            button{
+                max-width: 280px;
+                margin: 10px auto;
+                margin-bottom: 30px;
+                padding: 0;
+                padding: 15px 0;
+            }
+        }
+    }
+    .activ{
+        .img-bckg{
+            width: 100px;
+    
+            position: absolute;
+            top:-5%;
+            right: 8%;
+    
+            transform: rotate(12deg);
+        }
+        .container{
+            .activ__slider{
+                h2{
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+                img{
+                    width: 40%;
+                }
+                .slider__content{
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 80px;
+                    .content{
+                        flex-wrap: wrap;
+                        width: 100%;
+                        padding: 0 20px;
+                        .content__left{
+                            width: 100%;
+                            span{
+                                width: 100%;
+                                height: 200px;
+                            }
+                        }
+                        .content__right{
+                            width: 90%;
+                            margin: 0 auto;
+                            h3{
+                                font-size: 20px;
+                                margin: 10px 0;
+                            }
+                            p{
+                                font-size: 15px;
+                            }
+                        }
+                        
+                        
+                    }
+                }
+            }
+        }
+    }
+    .raz{
+        padding: 30px 0;
+        .container{
+            h2{
+                margin-bottom: 20px;
+            }
+            img{
+                width: 60px;
+                bottom: 0;
+                right: 0;
+            }
+            .raz__content{
+                .content__left{
+                    margin: auto;
+                    width: 45%;
+                    ul{
+                        li{
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .content__right{
+                    margin: auto;
+                    width: 30%;
+                    span{
+                        width: 100%;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+    .fedback{
+        .img-bckg{
+            width: 200px;
+    
+            position: absolute;
+            top:10px;
+            left: -50px;
+            z-index: 1;
+        }
+        .container{
+            h2{
+                font-size: 20px!important;
+            }
+            h2:first-child{
+                margin-bottom: 10px;
+                font-size: 30px!important;
+            }
+            .fidback__video{
+                display: none;
+            }
+            .fidback__slider{
+                display: flex;
+            }
+            button{
+                max-width: 220px;
+                padding: 15px 0;
+            }
+        }
+        img{
+            bottom: -20px;
+        }
+    }
+    .contacts{
+        margin-top: 60px;
+        padding-bottom: 30px;
+        .container{
+            h2{
+                margin-bottom: 20px;
+            }
+            .contacts__content{
+                .content__left{
+                   .left__string{
+                        p{
+                            font-size: 13px;
+                        }
+                        span{
+                            font-size: 10px;
+                        }
+                   }
+                   .left__string:last-child{
+                    p{
+                        width: auto;
+                    }
+                   }
+                   hr{
+                        max-width: 300px;
+                    }
+                    b{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            
+        }
+    }
+    footer{
+        .container{
+            .footer__docs{
+                .docs__top{
+                    p{
+                        font-size: 10px;
+                    }
+                }
+                .docs__bot{
+                    a{
+                        font-size: 8px;
+                    }
+                }
+            }
+            .footer__logo{
+                width: 30%;
+            }
+        }
+    }
+}
 
 

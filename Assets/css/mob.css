@@ -941,65 +941,30 @@
   .container {
     max-width: 90%;
   }
-  .modal .modal-content {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    box-shadow: none;
-    position: relative;
-  }
   .modal .modal-content h2 {
-    font-size: 54px !important;
-    margin: 35px 0;
+    font-size: 40px !important;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
   .modal .modal-content .content__blocks {
-    width: 100%;
-    max-width: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    height: 75vh;
+    overflow-y: scroll;
   }
   .modal .modal-content .content__blocks .blocks__block {
-    width: 45%;
-    margin: 5px auto;
-  }
-  .modal .modal-content .content__blocks .blocks__block ul {
     width: 100%;
-    margin: 0;
-    margin-bottom: 24px;
-    list-style: none;
+    margin: 10px auto;
   }
-  .modal .modal-content .content__blocks .blocks__block ul li {
-    font-size: 15px;
-    margin-bottom: 16px;
-  }
-  .modal .modal-content .content__blocks .blocks__block ul li::before {
-    left: -30px;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  .modal .modal-content .content__blocks .blocks__block p {
-    font-size: 36px;
-    margin-bottom: 25px;
-  }
-  .modal .modal-content .content__blocks .blocks__block button {
-    max-width: 185px;
-    height: 55px;
-    margin: 0 auto;
+  .modal .modal-content .content__blocks::-webkit-scrollbar {
+    display: none;
   }
   .modal .modal-content .quiz__animat {
-    width: 100%;
-    max-width: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    height: 72vh;
+    overflow-y: scroll;
   }
   .modal .modal-content .quiz__animat .animat__block {
-    width: 49%;
-    border-radius: 15px;
-    margin-bottom: 1%;
+    width: 90%;
+    margin: 2% auto;
   }
   .modal .modal-content .quiz__animat .animat__block span {
     width: 100%;
@@ -1009,11 +974,11 @@
     font-size: 20px;
     padding: 18px 0;
   }
+  .modal .modal-content .quiz__animat::-webkit-scrollbar {
+    display: none;
+  }
   .modal .modal-content .quiz__show {
-    max-width: 80%;
-    height: 70vh;
-    flex-wrap: wrap;
-    overflow: auto;
+    height: 67vh;
   }
   .modal .modal-content .quiz__show .show__block {
     width: 100%;
@@ -1030,98 +995,47 @@
   .modal .modal-content .quiz__show::-webkit-scrollbar {
     display: none;
   }
-  .modal .modal-content .quiz__buttons {
-    width: 100%;
-    max-width: 80%;
-    position: absolute;
-    z-index: 1001;
-    bottom: 1%;
-    left: 10%;
-    box-shadow: 0px 0px 20px 40px #4C8FD1;
-    background: #4C8FD1;
-  }
   .modal .modal-content .quiz__buttons .progress-bar {
-    width: 58%;
-  }
-  .modal .modal-content .quiz__buttons .btn-prev {
-    width: 40px;
-    height: 40px !important;
-    border-radius: 50%;
-    margin: auto;
-  }
-  .modal .modal-content .quiz__buttons .btn-prev svg {
-    width: 50%;
-    margin: auto;
-    margin-top: 2px;
+    width: 45%;
   }
   .modal .modal-content .quiz__buttons .btn-next {
-    max-width: 170px;
-    padding: 0;
-    padding: 13px 0;
+    max-width: 100px;
   }
   .modal .modal-content .quiz__guests {
     width: 100%;
-    max-width: 80%;
+    max-width: 90%;
     height: 70%;
   }
   .modal .modal-content .quiz__guests .guests__block {
     width: 100%;
-    height: 290px;
+    height: auto;
     margin: 0;
     margin: auto;
+    padding: 10px 0;
   }
   .modal .modal-content .quiz__guests .guests__block .block {
-    width: 400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    margin-top: 50px;
+    width: 90%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .modal .modal-content .quiz__guests .guests__block .block p {
-    width: 200px;
+    width: 100%;
     font-size: 26px;
-    font-weight: 600;
     text-align: left;
-    color: #0D162E;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
   }
   .modal .modal-content .quiz__guests .guests__block .block span {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 130%;
-    opacity: 40%;
-  }
-  .modal .modal-content .quiz__guests .guests__block .block b {
-    font-family: "Geologica";
-    font-size: 36px;
-    font-weight: 600;
-    color: #E15E40;
     margin: auto 0;
   }
-  .modal .modal-content .quiz__guests .guests__block .block button {
-    width: 62px;
-    height: 62px;
-    border-radius: 50px;
-    background: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1764705882);
-    font-family: "Geologica";
+  .modal .modal-content .quiz__guests .guests__block .block b {
     font-size: 36px;
-    font-weight: 600;
-    line-height: 0;
-    color: #E15E40;
-    transition: all linear 0.1s;
-  }
-  .modal .modal-content .quiz__guests .guests__block .block button:hover {
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.1764705882);
-  }
-  .modal .modal-content .quiz__guests .guests__block .block button:active {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1764705882);
-  }
-  .modal .modal-content .quiz__guests .guests__block .block .back {
-    color: #C8C1C1;
+    margin: auto 20px;
   }
   .modal .modal-content .quiz__date {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
   .modal .modal-content .quiz__date .date__day {
@@ -1132,10 +1046,7 @@
     font-size: 26px;
   }
   .modal .modal-content .quiz__date .date__time {
-    width: 100%;
-    height: 70vh;
-    margin: 0 auto;
-    padding: 0;
+    height: 65vh;
   }
   .modal .modal-content .quiz__date .date__time .time {
     width: 80%;
@@ -1143,8 +1054,7 @@
     padding: 20px 0;
   }
   .modal .modal-content .quiz__date .date__time .time span {
-    width: 70%;
-    font-size: 26px;
+    font-size: 19px;
   }
   .modal .modal-content .quiz__date .date__time .time button {
     font-size: 15px;
@@ -1459,5 +1369,458 @@
   }
   footer .container .footer__docs .docs__bot a {
     font-size: 10px;
+  }
+}
+@media (max-width: 365px) {
+  h2 {
+    font-size: 17px !important;
+  }
+  button {
+    font-size: 10px;
+  }
+  .container {
+    max-width: 90%;
+  }
+  .modal .modal-content h2 {
+    font-size: 30px !important;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .modal .modal-content .close {
+    top: 20px;
+    right: 20px;
+  }
+  .modal .modal-content .content__blocks {
+    height: 75vh;
+    overflow-y: scroll;
+  }
+  .modal .modal-content .content__blocks .blocks__block {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .modal .modal-content .content__blocks::-webkit-scrollbar {
+    display: none;
+  }
+  .modal .modal-content .quiz__animat {
+    height: 72vh;
+    overflow-y: scroll;
+  }
+  .modal .modal-content .quiz__animat .animat__block {
+    width: 90%;
+    margin: 2% auto;
+  }
+  .modal .modal-content .quiz__animat .animat__block span {
+    width: 100%;
+    height: 250px;
+  }
+  .modal .modal-content .quiz__animat .animat__block p {
+    font-size: 20px;
+    padding: 18px 0;
+  }
+  .modal .modal-content .quiz__animat::-webkit-scrollbar {
+    display: none;
+  }
+  .modal .modal-content .quiz__show {
+    height: 67vh;
+  }
+  .modal .modal-content .quiz__show .show__block {
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  .modal .modal-content .quiz__show .show__block span {
+    width: 100%;
+    height: 250px;
+  }
+  .modal .modal-content .quiz__show .show__block p {
+    font-size: 20px;
+    padding: 18px 0;
+  }
+  .modal .modal-content .quiz__show::-webkit-scrollbar {
+    display: none;
+  }
+  .modal .modal-content .quiz__buttons .progress-bar {
+    width: 38%;
+  }
+  .modal .modal-content .quiz__buttons .btn-next {
+    max-width: 100px;
+  }
+  .modal .modal-content .quiz__guests {
+    width: 100%;
+    max-width: 90%;
+    height: 70%;
+  }
+  .modal .modal-content .quiz__guests .guests__block {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin: auto;
+    padding: 10px 0;
+  }
+  .modal .modal-content .quiz__guests .guests__block .block {
+    width: 90%;
+    margin: 10px auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .modal .modal-content .quiz__guests .guests__block .block p {
+    width: 100%;
+    font-size: 26px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .modal .modal-content .quiz__guests .guests__block .block span {
+    margin: auto 0;
+  }
+  .modal .modal-content .quiz__guests .guests__block .block b {
+    font-size: 36px;
+    margin: auto 20px;
+  }
+  .modal .modal-content .quiz__date {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modal .modal-content .quiz__date .date__day {
+    margin-bottom: 20px;
+  }
+  .modal .modal-content .quiz__date .date__day input {
+    width: 200px;
+    font-size: 26px;
+  }
+  .modal .modal-content .quiz__date .date__time {
+    height: 65vh;
+  }
+  .modal .modal-content .quiz__date .date__time .time {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  .modal .modal-content .quiz__date .date__time .time span {
+    font-size: 19px;
+  }
+  .modal .modal-content .quiz__date .date__time .time button {
+    font-size: 15px;
+  }
+  .modal .modal-content .quiz__contacts {
+    width: 60%;
+    height: 70%;
+    margin-top: 20%;
+  }
+  .modal .modal-content .quiz__contacts label {
+    width: 100%;
+    font-size: 15px;
+    margin: 10px 0;
+  }
+  .modal .modal-content .quiz__contacts input {
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .modal .modal-content .quiz__contacts textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 15px;
+  }
+  .modal .modal-content .quiz-step.active {
+    display: block;
+    height: 100vh;
+  }
+  .modal_ph .modal-content button {
+    width: 25%;
+  }
+  header {
+    padding: 20px 0;
+  }
+  header .container {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+  }
+  header .container .header__logo {
+    max-width: 100%;
+    margin: 5px 0;
+  }
+  header .container .header__logo img {
+    width: 20%;
+    margin: 0 auto;
+  }
+  header .container .header__addres {
+    display: none;
+  }
+  header .container .header__social {
+    display: none;
+  }
+  header .container .header__number {
+    display: none;
+  }
+  header .container .header__button {
+    display: none;
+  }
+  header .container .header__menu {
+    display: flex;
+  }
+  header .container .header__burger {
+    margin-top: 10px;
+  }
+  header .container .header__burger .burger__addres {
+    max-width: 100%;
+  }
+  header .container .header__burger .burger__addres p {
+    font-size: 13px;
+    margin: 10px auto;
+  }
+  header .container .header__burger .burger__social {
+    width: 100%;
+    max-width: 135px;
+    margin: 5px auto;
+    order: 99;
+  }
+  header .container .header__burger .burger__social a {
+    width: 30px;
+    height: 30px;
+  }
+  header .container .header__burger .burger__number {
+    width: 100%;
+  }
+  header .container .header__burger .burger__number a {
+    font-size: 24px;
+    margin: 5px auto;
+    font-weight: 600;
+  }
+  header .container .header__burger .burger__button {
+    max-width: 100%;
+  }
+  header .container .header__burger .burger__button button {
+    width: 60%;
+    margin: 15px auto;
+    padding: 10px 20px;
+  }
+  header .container .header__burger .burger__button button svg {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  header .container .header__burger .burger__button button p {
+    margin-right: auto;
+  }
+  .main {
+    height: 500px;
+    background-position: 0 60px;
+  }
+  .main .container .main__content h1 {
+    font-size: 25px;
+  }
+  .main .container .main__content ul li {
+    font-size: 15px;
+  }
+  .main .container .main__content button {
+    max-width: 250px;
+    font-size: 15px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-radius: 15px 15px 50px 15px;
+  }
+  .main .container .main__content .content__decoration {
+    flex-wrap: wrap;
+  }
+  .main .container .main__content .content__decoration .decoration-block {
+    width: 48%;
+    max-width: 48%;
+    margin: 5px auto;
+    height: 45px;
+  }
+  .main .container .main__content .content__decoration .decoration-block p {
+    font-size: 8px;
+    margin-left: 10px;
+  }
+  .main .container .main__content .content__decoration .decoration-block svg {
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+    margin-left: 20px;
+  }
+  .program {
+    padding: 15px 0;
+    overflow-x: clip;
+  }
+  .program .program__bcg {
+    width: 150%;
+    left: -15%;
+    top: -35px;
+    height: 400px;
+  }
+  .program .container h2 {
+    margin-bottom: 10px;
+  }
+  .program .container .program__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .program .container .program__content .content__left {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .program .container .program__content .content__left .video {
+    height: 150px;
+  }
+  .program .container .program__content .content__right {
+    width: 100%;
+    margin: auto 0;
+  }
+  .program .container .program__content .content__right h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .program .container .program__content .content__right p {
+    font-size: 13px;
+  }
+  .animator .container h2 {
+    margin: 10px 0;
+    margin-top: 80px;
+  }
+  .animator .container .animator__slider {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .animator .container .animator__slider span {
+    height: 200px;
+  }
+  .animator .container button {
+    max-width: 280px;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    padding: 0;
+    padding: 15px 0;
+  }
+  .activ .img-bckg {
+    width: 100px;
+    position: absolute;
+    top: -5%;
+    right: 8%;
+    transform: rotate(12deg);
+  }
+  .activ .container .activ__slider h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .activ .container .activ__slider img {
+    width: 40%;
+  }
+  .activ .container .activ__slider .slider__content {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  .activ .container .activ__slider .slider__content .content {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .activ .container .activ__slider .slider__content .content .content__left {
+    width: 100%;
+  }
+  .activ .container .activ__slider .slider__content .content .content__left span {
+    width: 100%;
+    height: 200px;
+  }
+  .activ .container .activ__slider .slider__content .content .content__right {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .activ .container .activ__slider .slider__content .content .content__right h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .activ .container .activ__slider .slider__content .content .content__right p {
+    font-size: 15px;
+  }
+  .raz {
+    padding: 30px 0;
+  }
+  .raz .container h2 {
+    margin-bottom: 20px;
+  }
+  .raz .container img {
+    width: 60px;
+    bottom: 0;
+    right: 0;
+  }
+  .raz .container .raz__content .content__left {
+    margin: auto;
+    width: 45%;
+  }
+  .raz .container .raz__content .content__left ul li {
+    font-size: 13px;
+  }
+  .raz .container .raz__content .content__right {
+    margin: auto;
+    width: 30%;
+  }
+  .raz .container .raz__content .content__right span {
+    width: 100%;
+    height: 100px;
+  }
+  .fedback .img-bckg {
+    width: 200px;
+    position: absolute;
+    top: 10px;
+    left: -50px;
+    z-index: 1;
+  }
+  .fedback .container h2 {
+    font-size: 20px !important;
+  }
+  .fedback .container h2:first-child {
+    margin-bottom: 10px;
+    font-size: 30px !important;
+  }
+  .fedback .container .fidback__video {
+    display: none;
+  }
+  .fedback .container .fidback__slider {
+    display: flex;
+  }
+  .fedback .container button {
+    max-width: 220px;
+    padding: 15px 0;
+  }
+  .fedback img {
+    bottom: -20px;
+  }
+  .contacts {
+    margin-top: 60px;
+    padding-bottom: 30px;
+  }
+  .contacts .container h2 {
+    margin-bottom: 20px;
+  }
+  .contacts .container .contacts__content .content__left .left__string p {
+    font-size: 13px;
+  }
+  .contacts .container .contacts__content .content__left .left__string span {
+    font-size: 10px;
+  }
+  .contacts .container .contacts__content .content__left .left__string:last-child p {
+    width: auto;
+  }
+  .contacts .container .contacts__content .content__left hr {
+    max-width: 300px;
+  }
+  .contacts .container .contacts__content .content__left b {
+    margin-bottom: 10px;
+  }
+  footer .container .footer__docs .docs__top p {
+    font-size: 10px;
+  }
+  footer .container .footer__docs .docs__bot a {
+    font-size: 8px;
+  }
+  footer .container .footer__logo {
+    width: 30%;
   }
 }/*# sourceMappingURL=mob.css.map */
