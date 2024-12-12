@@ -85,11 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ///////////////////////////////////////////////////////////////////////////////
     // Получаем элементы
       const modal = document.getElementById("modal"); // Само модальное окно
-      const modal_ph = document.getElementById("modal_ph"); 
-      const openModalButtons = document.querySelectorAll(".openModalBtn"); // Все кнопки для открытия
-      const openModalPh = document.querySelectorAll(".openModalPh")
-      const closeModalBtn = document.querySelector(".close");
-      const closeModalBtnPh = document.querySelector(".close_ph"); // Кнопка закрытия
+      const openModalButtons = document.querySelectorAll(".openModalBtn");
+      const closeModalBtn = document.querySelector(".close"); // Кнопка закрытия
 
     // Добавляем обработчики на каждую кнопку
       openModalButtons.forEach((button) => {
@@ -97,19 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
               modal.style.display = "flex"; // Показываем окно
           });
       });
-      openModalPh.forEach((button) => {
-        button.addEventListener("click", () => {
-            modal_ph.style.display = "flex"; // Показываем окно
-        });
-    });
 
     // Закрытие модального окна (по нажатию на крестик)
       closeModalBtn.addEventListener("click", () => {
           modal.style.display = "none"; // Скрываем окно
       });
-      closeModalBtnPh.addEventListener("click", () => {
-        modal_ph.style.display = "none"; // Скрываем окно
-    });
 
       // Закрытие модального окна (по клику на фон)
       window.addEventListener("click", (e) => {
@@ -124,76 +113,333 @@ document.addEventListener("DOMContentLoaded", () => {
         initSlider2();
         initSlider3(); // Инициализация слайдера
     });
-//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////Квиз//////////////////////////////////////////////////////////////////
+(function () {
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const steps = document.querySelectorAll(".quiz-step"); // Все шаги квиза
+        const progressBars = document.querySelectorAll(".progress-bar"); // Прогресс-бары
+        let currentStep = 0; // Текущий шаг
+
+        // Объект для хранения данных квиза
+        const quizData = {
+            tariff: "",
+            animator: "",
+            show: "",
+            guests: {
+                children: 5, // Значение по умолчанию
+                adults: 5    // Значение по умолчанию
+            },
+            date: "",  // Дата по умолчанию может быть пустой или заданной
+            time: "",
+            contacts: {
+                name: "",
+                phone: "",
+                message: ""
+            }
+        };
+
+        // Функция обновления шагов и прогресс-бара
+        function updateSteps() {
+            steps.forEach((step, index) => {
+                step.classList.toggle("active", index === currentStep);
+            });
+
+            progressBars.forEach((bar) => {
+                if (currentStep === 0) {
+                    bar.style.display = "none";
+                } else {
+                    bar.style.display = "block";
+                    const progress = ((currentStep) / (steps.length - 1)) * 100;
+                    bar.style.setProperty("--progress-width", `${progress}%`);
+                }
+            });
+
+            document.querySelectorAll(".btn-prev").forEach((btn) => {
+                btn.style.display = currentStep === 0 ? "none" : "inline-block";
+            });
+
+            document.querySelectorAll(".btn-next").forEach((btn) => {
+                btn.textContent = currentStep === steps.length - 1 ? "Отправить" : "Далее";
+            });
+        }
+
+        // Кнопка "Далее"
+        document.querySelectorAll(".btn-next").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                } else {
+                    sendQuizData();
+                }
+            });
+        });
+
+        // Кнопка "Назад"
+        document.querySelectorAll(".btn-prev").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Кнопка выбора тарифа
+        document.querySelectorAll(".btn-select-tariff").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                quizData.tariff = e.target.closest(".blocks__block").querySelector("p").innerText;
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Выбор аниматора
+        document.querySelectorAll(".animat__block").forEach((block) => {
+            block.addEventListener("click", () => {
+                quizData.animator = block.querySelector("p").innerText;
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Выбор шоу-программы
+        document.querySelectorAll(".show__block").forEach((block) => {
+            block.addEventListener("click", () => {
+                quizData.show = block.querySelector("p").innerText;
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Выбор количества гостей
+        document.querySelectorAll(".block").forEach((block, index) => {
+            const minusButton = block.querySelector(".back");
+            const plusButton = block.querySelectorAll("button")[1];
+            const numberDisplay = block.querySelector("b");
+
+            minusButton.addEventListener("click", () => {
+                let currentValue = parseInt(numberDisplay.textContent, 10);
+                if (currentValue > 1) {
+                    currentValue--;
+                    numberDisplay.textContent = currentValue;
+                }
+                quizData.guests[index === 0 ? "children" : "adults"] = currentValue;
+            });
+
+            plusButton.addEventListener("click", () => {
+                let currentValue = parseInt(numberDisplay.textContent, 10);
+                currentValue++;
+                numberDisplay.textContent = currentValue;
+                quizData.guests[index === 0 ? "children" : "adults"] = currentValue;
+            });
+        });
+
+        // Выбор даты и времени
+        document.getElementById("selected-date").addEventListener("change", (e) => {
+            quizData.date = e.target.value;
+        });
+
+        document.querySelectorAll(".time button").forEach((button) => {
+            button.addEventListener("click", (e) => {
+                quizData.time = e.target.previousElementSibling.innerText;
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Сохранение контактной информации
+        document.querySelector("[name='name']").addEventListener("input", (e) => {
+            quizData.contacts.name = e.target.value;
+        });
+
+        document.querySelector("[name='phone']").addEventListener("input", (e) => {
+            quizData.contacts.phone = e.target.value;
+        });
+
+        document.querySelector("[name='message']").addEventListener("input", (e) => {
+            quizData.contacts.message = e.target.value;
+        });
+
+        // Отправка данных квиза на сервер
+        function sendQuizData() {
+            // Получаем поля ввода имени и телефона
+            const nameField = document.querySelector("[name='name']");
+            const phoneField = document.querySelector("[name='phone']");
+        
+            // Проверяем, заполнены ли поля
+            const isNameValid = nameField.value.trim() !== "";
+        
+            // Извлекаем только цифры из значения телефона
+            const phoneValue = phoneField.value.replace(/\D/g, ''); // Убираем все нецифровые символы
+            const isPhoneValid = phoneValue.length >= 10; // Проверяем, что номер состоит хотя бы из 10 цифр (или нужное количество для вашего формата)
+        
+            if (!isNameValid || !isPhoneValid) {
+                // Добавляем красную рамку для пустых полей
+                if (!isNameValid) {
+                    nameField.style.background = "#e48b97";
+                } else {
+                    nameField.style.background = ""; // Сбрасываем рамку, если поле корректно
+                }
+        
+                if (!isPhoneValid) {
+                    phoneField.style.background = "#e48b97";
+                } else {
+                    phoneField.style.background = ""; // Сбрасываем рамку, если поле корректно
+                }
+        
+                // Выводим сообщение об ошибке
+                alert("Пожалуйста, заполните имя и телефон.");
+                return; // Прерываем выполнение функции
+            }
+        
+            // Если поля заполнены, сбрасываем рамки
+            nameField.style.background = "";
+            phoneField.style.background = "";
+        
+            // Формируем тело письма, учитывая значения по умолчанию для детей, взрослых и даты
+            const emailBody = `
+                Форма "Заявка на праздник"
+                Тариф: ${quizData.tariff || "Не выбран"}
+                Аниматор: ${quizData.animator || "Не выбран"}
+                Шоу-программа: ${quizData.show || "Не выбрана"}
+                Дети: ${quizData.guests.children || 5}
+                Взрослые: ${quizData.guests.adults || 5}
+                Дата: ${quizData.date || formattedDate}
+                Время: ${quizData.time || "Не выбрано"}
+                Имя: ${quizData.contacts.name}
+                Телефон: ${quizData.contacts.phone}
+                Сообщение: ${quizData.contacts.message}
+            `;
+        
+            alert("Отправлено: \n" + emailBody); // Временно выводим данные в alert
+        
+            // Пример отправки через fetch
+            fetch("https://example.com/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(quizData),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert("Данные успешно отправлены!");
+                    } else {
+                        alert("Ошибка отправки данных.");
+                    }
+                })
+                .catch((error) => {
+                    alert("Ошибка отправки данных: " + error.message);
+                });
+        }
+        
+        // Инициализация
+        updateSteps();
+    });
+})();
+////////////////////////Форма с телефоном//////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".quiz-step"); // Все шаги квиза
-  const progressBars = document.querySelectorAll(".progress-bar"); // Прогресс-бары
-  let currentStep = 0; // Текущий шаг
+    const modal_ph = document.getElementById("modal_ph"); 
+    const openModalPh = document.querySelectorAll(".openModalPh");
+    const closeModalBtnPh = document.querySelector(".close_ph"); // Кнопка закрытия
 
-  // Функция обновления шагов и прогресс-бара
-  function updateSteps() {
-      // Показываем активный шаг
-      steps.forEach((step, index) => {
-          step.classList.toggle("active", index === currentStep);
-      });
+    // Элементы формы
+    const nameField = document.querySelector("[name='name_ph']");
+    const phoneField = document.querySelector("[name='phone_ph']");
+    const messageField = document.querySelector("[name='message_ph']");
+    const sendButton = document.getElementById("sendContactForm");
 
-      // Обновляем прогресс-бар
-      progressBars.forEach((bar) => {
-          if (currentStep === 0) {
-              bar.style.display = "none"; // Прячем прогресс-бар на первом шаге
-          } else {
-              bar.style.display = "block"; // Показываем прогресс-бар
-              const progress = ((currentStep) / (steps.length - 1)) * 100; // Вычисляем прогресс
-              bar.style.setProperty("--progress-width", `${progress}%`); // Устанавливаем CSS-переменную
-          }
-      });
+    let buttonText = ''; // Переменная для хранения текста кнопки, по которой открылось окно
 
-      // Управление кнопками "Назад" и "Далее"
-      document.querySelectorAll(".btn-prev").forEach((btn) => {
-          btn.style.display = currentStep === 0 ? "none" : "inline-block"; // Прячем "Назад" на первом шаге
-      });
+    // Открытие модального окна при нажатии на кнопку
+    openModalPh.forEach((button) => {
+        button.addEventListener("click", () => {
+            modal_ph.style.display = "flex"; // Показываем окно
+            buttonText = button.textContent; // Сохраняем текст кнопки
+        });
+    });
 
-      document.querySelectorAll(".btn-next").forEach((btn) => {
-          btn.textContent = currentStep === steps.length - 1 ? "Отправить" : "Далее"; // Меняем текст кнопки
-      });
-  }
+    // Закрытие модального окна по нажатию на крестик
+    closeModalBtnPh.addEventListener("click", () => {
+        modal_ph.style.display = "none"; // Скрываем окно
+    });
 
-  // Кнопка "Далее"
-  document.querySelectorAll(".btn-next").forEach((btn) => {
-      btn.addEventListener("click", () => {
-          if (currentStep < steps.length - 1) {
-              currentStep++;
-              updateSteps();
-          } else {
-              alert("Форма отправлена!");
-          }
-      });
-  });
+    // Закрытие модального окна при клике на фон
+    window.addEventListener("click", (e) => {
+        if (e.target === modal_ph) {
+            modal_ph.style.display = "none"; // Скрываем окно
+        }
+    });
 
-  // Кнопка "Назад"
-  document.querySelectorAll(".btn-prev").forEach((btn) => {
-      btn.addEventListener("click", () => {
-          if (currentStep > 0) {
-              currentStep--;
-              updateSteps();
-          }
-      });
-  });
+    // Валидация формы
+    function validateForm() {
+        // Убираем лишние пробелы и символы
+        const nameValid = nameField.value.trim() !== ""; // Проверка имени на пустоту
+        const phoneValue = phoneField.value.replace(/[^\d+()-\s]/g, ''); // Убираем все лишние символы
+        const phoneValid = /^\+?\d{1,4}[\s-]?\(?\d{2,5}\)?[\s-]?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{1,9}$/.test(phoneField.value.trim());  
 
-  // Кнопка выбора тарифа
-  document.querySelectorAll(".btn-select-tariff").forEach((btn) => {
-      btn.addEventListener("click", () => {
-          if (currentStep < steps.length - 1) {
-              currentStep++;
-              updateSteps();
-          }
-      });
-  });
+        // Валидация полей
+        if (!nameValid) {
+            nameField.style.backgroundColor = "#e48b97"; // Подсвечиваем ошибку
+        } else {
+            nameField.style.backgroundColor = "";
+        }
 
-  // Инициализация
-  updateSteps();
+        if (!phoneValid) {
+            phoneField.style.backgroundColor = "#e48b97"; // Подсвечиваем ошибку
+        } else {
+            phoneField.style.backgroundColor = "";
+        }
+
+        return nameValid && phoneValid; // Возвращаем true, если все поля валидны
+    }
+
+    // Отправка данных на сервер
+    sendButton.addEventListener("click", function () {
+        if (validateForm()) {
+            const formData = `
+            Форма: ${buttonText}
+            Имя: ${nameField.value.trim()}
+            Телефон: ${phoneField.value.trim()}
+            Сообщение: ${messageField.value.trim()}
+        `;
+            alert("Отправлено: \n" + formData); // Временно выводим данные в alert
+            // Пример отправки через fetch
+            fetch("https://example.com/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+            .then((response) => {
+                if (response.ok) {
+                    alert("Данные успешно отправлены!");
+                    modal_ph.style.display = "none"; // Закрытие модального окна после успешной отправки
+                } else {
+                    alert("Ошибка отправки данных.");
+                }
+            })
+            .catch((error) => {
+                alert("Ошибка отправки данных: " + error.message);
+            });
+        } else {
+            alert("Пожалуйста, проверьте корректность заполнения полей.");
+        }
+    });
 });
-////////////////////////////////////////////////////////// 
+
+//////////////////////////////////////////////////////////////////////////////////////////
 document.querySelectorAll('.block').forEach((block) => {
     // Находим элементы кнопок и текста числа
     const minusButton = block.querySelector('.back');
@@ -214,6 +460,8 @@ document.querySelectorAll('.block').forEach((block) => {
         numberDisplay.textContent = currentValue + 1;
     });
 });
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Находим поле с датой
 const dateInput = document.getElementById('selected-date');
@@ -310,16 +558,5 @@ const phoneInput1 = document.getElementById("phone1");
         function setCursorPosition(input, position) {
             input.setSelectionRange(position, position);
         }
-  
-  
-  
-  
-  
-  
-  
-      
-
-
-
 
 })();
