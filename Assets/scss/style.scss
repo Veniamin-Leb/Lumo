@@ -145,13 +145,14 @@ section{
             justify-content: space-between;
             
             .blocks__block{
-                width: 22%;
+                width: 27%;
                 display: flex;
                 flex-basis: auto;
                 flex-wrap: wrap;
                 background-color: #fff;
                 border-radius: 15px;
-                padding: 25px 9px 16px;
+                padding: 15px 9px 15px;
+                position: relative;
                 ul{
                     width: 100%;
                     margin: 0;
@@ -159,9 +160,9 @@ section{
                     list-style: none;
                     li{
                         text-align: left;
-                        font-size: 15px;
+                        font-size: 12px;
                         font-weight: 300;
-                        margin-bottom: 16px;
+                        margin-bottom: 10px;
                         position: relative;
                         color: #0D162E;
                     }
@@ -187,16 +188,26 @@ section{
                 }
                 p{
                     width: 100%;
-                    font-size: 36px;
+                    font-size: 25px;
                     font-weight: 600;
                     line-height: 100%;
-                    margin-bottom: 25px;
+
+                    color: #646A79;
+                    text-transform: uppercase;
+                    font-family: 'Unbounded';
+                    margin-top: auto;
+                    margin-bottom: 55px;
                 }
                 button{
-                    max-width: 185px;
-                    height: 55px;
+                    max-width: 40%;
+                    height: 45px;
+
                     margin: 0 auto;
                     padding: 0;
+                    position: absolute;
+                    bottom: 2%;
+                    left: 30%;
+                    font-size: 20px;
                 }
                 
 
@@ -213,12 +224,23 @@ section{
                 
                 border-radius: 15px;
                 overflow: hidden;
-                
+                position: relative;
                 span{
                     width: 100%;
                     height: 250px;
                     display: block;
                     background: #646A79;
+                    position: relative;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        
+
+                    }
                 }
                 p{
                     font-weight: 300;
@@ -227,6 +249,24 @@ section{
                     color: #fff;
                     background-color: #0D162E;
                 }
+            }
+            .animat__block::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #4c8fd163;
+                transition: all linear .3s;
+            }
+            .animat__block:hover{
+                cursor: pointer;
+            }
+            .animat__block:hover::after{
+                opacity: 1;
             }
         }
         .quiz__show{
@@ -981,14 +1021,19 @@ header{
         }
         .animator__slider{
             width: 100%;
-            display: flex;
+            
             justify-content: space-between;
             span{
                 height: 265px;
-                display: flex;
+                
                 background-color: #4C8FD1;
                 border-radius: 50px;
                 margin: 0 14px;
+                overflow: hidden;
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         button{
@@ -1136,6 +1181,10 @@ header{
                     border-radius: 50px;
                     width: 100%;
                     height: 288px;
+                    overflow: hidden;
+                    iframe{
+                        height: 100%;
+                    }
                 }
             }
         }

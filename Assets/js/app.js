@@ -8,7 +8,7 @@
             slidesToScroll: 3,
             arrows: true,
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 7000,
             prevArrow: '<button class="slick-prev"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 3L5 16.7213L23 34" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg> </button>',
             nextArrow: '<button class="slick-next"><svg width="26" height="37" viewBox="0 0 26 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 34L21 20.2787L3 3" stroke="#4C8FD1" stroke-width="6" stroke-linecap="round"/></svg></button>',
             responsive: [
@@ -311,9 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 Форма "Заявка на праздник"
                 Тариф: ${quizData.tariff || "Не выбран"}
                 Аниматор: ${quizData.animator || "Не выбран"}
-                Шоу-программа: ${quizData.show || "Не выбрана"}
-                Дети: ${quizData.guests.children || 5}
-                Взрослые: ${quizData.guests.adults || 5}
+                Дети: ${quizData.guests.children || "10"}
+                Взрослые: ${quizData.guests.adults || "5"}
                 Дата: ${quizData.date || formattedDate}
                 Время: ${quizData.time || "Не выбрано"}
                 Имя: ${quizData.contacts.name}
